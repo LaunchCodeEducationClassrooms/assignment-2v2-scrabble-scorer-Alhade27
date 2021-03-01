@@ -82,18 +82,19 @@ function scrabbleScore(word)
 	return totalPoints
   }
 
-const scoringAlgorithms = {scoringAlgorithm:[{name:"Simple Score",description:"Each letter is worth 1 point.",scoreFunction:simpleScore},{name:"Bonus Vowels",description:"Vowels are 3 pts, consonants are 1 pt.",scoreFunction:vowelBonusScore},{name:"Scrabble",description:"The traditional scoring algorithm.",scoreFunction:scrabbleScore}]};
+const scoringAlgorithms = [ Object({ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoreFunction: simpleScore }), Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoreFunction: vowelBonusScore }), Object({ name: 'Scrabble', description: 'The traditional scoring algorithm.', scoreFunction: scrabbleScore }) ];
+
 function scorerPrompt(word) {
 let scoreChoice=Number(input.question('\nWhich scoring algorithm would you like to use?\n\n0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system\n(0 is choosen by default)\n--------------------------\n'));
 while(scoreChoice<0||scoreChoice>=3||String(scoreChoice)==="NaN")
   {scoreChoice=Number(input.question('\nWhich scoring algorithm would you like to use?\n\n0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system\n-----------------------\n'));
   }
 if(scoreChoice===0){
-  console.log(scoringAlgorithms.scoringAlgorithm[0]["scoreFunction"](word),"- points for",word);
+  console.log(scoringAlgorithms[0]["scoreFunction"](word),"- points for",word);
 }else if(scoreChoice===1){
-  console.log(scoringAlgorithms.scoringAlgorithm[1]["scoreFunction"](word),"- points for",word);
+  console.log(scoringAlgorithms[1]["scoreFunction"](word),"- points for",word);
 }else if(scoreChoice===2){
-  console.log(scoringAlgorithms.scoringAlgorithm[2]["scoreFunction"](word),"- points for",word);
+  console.log(scoringAlgorithms[2]["scoreFunction"](word),"- points for",word);
 }
 }
 
