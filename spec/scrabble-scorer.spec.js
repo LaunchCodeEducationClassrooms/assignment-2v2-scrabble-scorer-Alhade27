@@ -132,11 +132,11 @@ describe("Scrabble Scorer solution", function() {
 	});
 
 	it("scoringAlgorithms contain three scoring objects", function() {
-		expect(solution.scoringAlgorithms).toContain(jasmine.objectContaining({
-			{scoringFunction: solution.simpleScore},
-			{scoringFunction: solution.vowelBonusScore},
-			{scoringFunction: solution.scrabbleScore},
-		}));
+		expect(solution.scoringAlgorithms).toContain(jasmine.objectContaining([{
+			scoringFunction: solution.simpleScore,
+			scoringFunction: solution.vowelBonusScore,
+			scoringFunction: solution.scrabbleScore,
+		}]));
 	});
 	
 });
