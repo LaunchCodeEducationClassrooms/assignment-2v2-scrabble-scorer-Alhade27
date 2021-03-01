@@ -84,6 +84,7 @@ function scrabbleScore(word)
 
 const scoringAlgorithms = [{ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoreFunction: simpleScore }, { name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoreFunction: vowelBonusScore }, { name: 'Scrabble', description: 'The traditional scoring algorithm.', scoreFunction: scrabbleScore }];
 
+
 function scorerPrompt(word) {
 let scoreChoice=Number(input.question('\nWhich scoring algorithm would you like to use?\n\n0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system\n(0 is choosen by default)\n--------------------------\n'));
 while(scoreChoice<0||scoreChoice>=3||String(scoreChoice)==="NaN")
@@ -110,9 +111,9 @@ function transform(obj) {
     }
   return tempNewPointStructure
 }
-
 function runProgram() {
   scorerPrompt(initialPrompt());
+
 }
 
 // Don't write any code below this line //
