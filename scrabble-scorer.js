@@ -44,14 +44,12 @@ function initialPrompt() {
   return word
 };
 
-let simpleScore;
-function calculateSimpleScore(str){
+function simpleScore(str){
   simpleScore=str.length;
   return simpleScore
 }
 
-let vowelBonusScore;
-function calculateVowelBonusScore(str){
+function vowelBonusScore(str){
   vowelBonusScore=0;
   for(let i=0;i<str.length;i++)
     {
