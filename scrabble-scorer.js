@@ -72,13 +72,13 @@ function scrabbleScore(word)
       {
         if(newPointStructure[word[i]])
         {
-        letterPoints += `Points for '${word[i]}': ${Number(newPointStructure[word[i]])}\n`;
+        letterPoints += `Points for '${word[i]}': ${newPointStructure[word[i]]}\n`;
         totalPoints+=Number(newPointStructure[word[i]]);
         }else{
         letterPoints += `Points for '${word[i]}': ${0}\n`;
         }
       }
-  letterPoints+=`---------------------\n${totalPoints}`
+  letterPoints+=`---------------------\n${String(totalPoints)}`
 	return letterPoints;
   }
 
@@ -108,11 +108,6 @@ function transform(obj) {
           tempNewPointStructure[obj[String(item)][i].toLowerCase()]=Number(item);
         }
     }
-  for(let i=0;i<10;i++)
-    {
-      tempNewPointStructure[i]=0;
-    }
-  tempNewPointStructure[" "]=0;
   return tempNewPointStructure
 }
 
