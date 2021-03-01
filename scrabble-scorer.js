@@ -24,11 +24,9 @@ function oldScrabbleScorer(word) {
  
 		 if (oldPointStructure[pointValue].includes(word[i])) {
 			letterPoints += `Points for '${word[i]}': ${pointValue}\n`;
-      totalPoints+=Number(pointValue);
 		 }
 	  }
 	}
-  letterPoints+=`---------------------\n${totalPoints}`
 	return letterPoints;
  }
 
@@ -74,7 +72,7 @@ function scrabbleScore(word)
       {
         if(newPointStructure[word[i]])
         {
-        letterPoints += `Points for '${word[i]}': ${newPointStructure[word[i]]}\n`;
+        letterPoints += `Points for '${word[i]}': ${Number(newPointStructure[word[i]])}\n`;
         totalPoints+=Number(newPointStructure[word[i]]);
         }else{
         letterPoints += `Points for '${word[i]}': ${0}\n`;
