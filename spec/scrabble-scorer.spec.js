@@ -134,8 +134,8 @@ describe("Scrabble Scorer solution", function() {
 	it("scoringAlgorithms contain three scoring objects", function() {
 		expect(solution.scoringAlgorithms).toContain(jasmine.objectContaining({
 			scoringFunction: solution.simpleScore,
-			scoringFunction1: solution.vowelBonusScore,
-			scoringFunction2: solution.scrabbleScore,
+			scoringFunction: solution.vowelBonusScore,
+			scoringFunction: solution.scrabbleScore,
 		}));
 	});
 	
