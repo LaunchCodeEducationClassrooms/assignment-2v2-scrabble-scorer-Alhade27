@@ -78,7 +78,7 @@ function scrabbleScore(word)
         letterPoints += `Points for '${word[i]}': ${0}\n`;
         }
       }
-  letterPoints+=`---------------------\n${String(totalPoints)}`
+  //letterPoints+=`---------------------\n${String(totalPoints)}`
 	return letterPoints;
   }
 
